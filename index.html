@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px 100px;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: rgb(224, 103, 46);
+            margin: 0px;
+            padding: 10px;
+            color: white;
+        }
+
+        #text {
+            border: 2px solid rgb(32, 32, 43);
+            width: 99.3%;
+            margin: 0px;
+
+        }
+
+        p {
+            background-color: rgb(8, 8, 200);
+            margin-top: -4px;
+            padding: 10px;
+            color: white;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        
+        <h1>Words and Characer Counter</h1>
+        <textarea name="text" id="text" cols="30" rows="10" ></textarea>
+        <p>
+        
+        <span id="word"> 0</span>    words or <span id="char"> 0</span> chacters
+            <!-- <span id="word">0 </span>Words and <span id="char">0 </span>character -->
+        </p>
+    </div>
+
+    <script>
+        let textbox = document.getElementById('text');
+        textbox.addEventListener('input',function (){
+            let text =this.value;
+            let charLen=text.length;
+            // console.log(text.length);
+            char.innerHTML=charLen;
+            text=text.trim();
+            let wordArr=text.split(' ');
+            // console.log(wordArr);
+            let filteredwordArr =wordArr.filter(function (el){
+                return el!="";
+            });
+            word.innerHTML=filteredwordArr.length;
+            // console.log(filteredwordArr);
+
+            // "    kbjsab   hacch   jscaj    " 
+        }) 
+//         "this.value" gets the value of the textarea element.
+// 2. "text.length" gives the total length of the string, including spaces.
+// 3. "char.innerHTML=charLen" updates the "char" element's inner HTML to display the total length of the string.
+// 4. "text=text.trim()" trims the extra spaces at the beginning and end of the string.
+// 5. "let wordArr=text.split(' ')" splits the string into an array of words.
+// 6. "let filteredwordArr =wordArr.filter(function (el){return el!="";})" filters out the empty words in the array.
+// 7. "word.innerHTML=filteredwordArr.length" updates the "word" element's inner HTML to display the total number of words in the textarea.
+// // 8. Finally, "textbox.addEventListener('input',function (){...})" listens for input events (like typing or pasting text) on the textarea element and triggers the provided function. This ensures that the word and character counts are always up-to-date  
+    </script>
+
+</body>
+
+</html>
